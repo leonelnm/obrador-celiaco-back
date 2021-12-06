@@ -1,0 +1,33 @@
+{
+  "name": "backend-obrador",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "react": "17.0.0",
+    "react-dom": "17.0.0",
+    "wouter": "^2.7.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "1.0.0",
+    "standard": "^16.0.3",
+    "vite": "2.5.4"
+  },
+  "eslintConfig": {
+    "extends": "standard",
+    "env": {
+      "browser": true
+    },
+    "rules": {
+      "no-unused-vars": [
+        "off",
+        {
+          "vars": "local"
+        }
+      ]
+    }
+  }
+}

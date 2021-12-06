@@ -1,0 +1,17 @@
+.headerName{
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: rgba(238, 238, 238, 0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerName > a {
+  margin-right: 2rem;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}

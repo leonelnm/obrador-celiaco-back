@@ -1,0 +1,22 @@
+.error404box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+.error404{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.error404 > div:first-child{
+  font-size: 5em;
+}
+
+.error404 > div:last-child{
+  font-size: 2em;
+}
