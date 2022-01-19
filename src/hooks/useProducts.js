@@ -3,10 +3,11 @@ import { useEffect, useState } from 'react'
 export const useProducts = () => {
   const [loading, setLoading] = useState(true)
   const [products, setProducts] = useState([])
+  const uri = import.meta.env.VITE_API_URI
 
   useEffect(() => {
     console.log('effect')
-    fetch('http://192.168.1.137:3010/api/product')
+    fetch(`${uri}/api/product`)
       .then(response => response.json())
       .then(data => {
         setProducts(data)
