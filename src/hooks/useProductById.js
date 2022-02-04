@@ -1,15 +1,18 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
+import Context from '../context/userContext'
+import { getProductById } from '../services/productService'
 
 export const useProductsById = ({ id }) => {
+  const { jwt: token } = useContext(Context)
+
+  console.log(token)
+
   const [loading, setLoading] = useState(true)
   const [product, setProduct] = useState({})
-  const uri = import.meta.env.VITE_API_URI
 
   useEffect(() => {
-    fetch(`${uri}/api/product/${id}`)
-      .then(response => response.json())
+    getProductById(id, token)
       .then(data => {
-        console.log(data)
         setProduct(data)
         setLoading(false)
       })

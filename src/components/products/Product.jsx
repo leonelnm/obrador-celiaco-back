@@ -24,7 +24,7 @@ export const Product = ({ id, name, price, img, imgAlt, content }) => {
       </section>
 
       <Link href={url}>
-        <a>Modificar</a>
+        <a>Editar</a>
       </Link>
 
     </article>
