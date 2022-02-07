@@ -1,11 +1,9 @@
-import { useContext, useEffect, useState } from 'react'
-import Context from '../context/userContext'
+import { useEffect, useState } from 'react'
 import { getProductById } from '../services/productService'
+import { useToken } from './useToken'
 
 export const useProductsById = ({ id }) => {
-  const { jwt: token } = useContext(Context)
-
-  console.log(token)
+  const token = useToken()
 
   const [loading, setLoading] = useState(true)
   const [product, setProduct] = useState({})
@@ -16,7 +14,7 @@ export const useProductsById = ({ id }) => {
         setProduct(data)
         setLoading(false)
       })
-  }, [])
+  }, [token])
 
   return { loading, product }
 }

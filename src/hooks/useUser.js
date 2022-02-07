@@ -11,15 +11,18 @@ export default function useUser () {
 
     loginService({ email, password })
       .then(({ token }) => {
+        window.localStorage.setItem('obradorbk-token', token)
         setJwt(token)
         setState({ loading: false, error: false })
       })
       .catch(() => {
+        window.localStorage.removeItem('obradorbk-token')
         setState({ loading: false, error: true })
       })
   }, [setJwt])
 
   const logout = useCallback(() => {
+    window.localStorage.removeItem('obradorbk-token')
     setJwt(null)
   }, [setJwt])
 

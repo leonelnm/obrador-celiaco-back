@@ -20,12 +20,16 @@ export default function Home () {
   }, [loading])
 
   const filterProducts = (input) => {
-    const resultFilter = products.filter(p => p.name.toLowerCase().includes(input))
+    const resultFilter = products.filter(p => normalize(p.name.toLowerCase()).includes(normalize(input)))
     setCounter(resultFilter.length)
     setProductsFilter(resultFilter)
 
     localStorage.setItem('obrador-searcher', input)
     setSearch(input)
+  }
+
+  const normalize = (str = '') => {
+    return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
   }
 
   const handlerSearch = (e) => {

@@ -15,7 +15,7 @@ export const Product = ({ id, name, price, img, imgAlt, content }) => {
       <section className={css.productCardBody}>
         <section className={css.productCardTitle}>
           <header>{name}</header>
-          <div>{price}€</div>
+          <div>{price.toFixed(2)}€</div>
         </section>
 
         <section>
