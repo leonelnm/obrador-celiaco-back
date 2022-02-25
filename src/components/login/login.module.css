@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+}
+
+.form{
+  max-width: 320px;
+  width: 100%;
+}
+
+.form label {
+  display: block;
+  font-size: .8em;
+  margin: 1rem 0;
+}
+
+.form input {
+  background: #eee;
+  border: none;
+  display: block;
+  font-size: 1.1em;
+  line-height: 2;
+  margin-bottom: .5rem;
+  padding: 0 .25rem;
+  width: 100%;
+}
+
+.form .btn {
+  width: 100%;
+  padding: .7rem;
+  border: none;
+  border-radius: 8px;
+  background-color: green;
+  color: white;
+  font-weight: bolder;
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+.form .btn:hover {
+  transition: all .2s ease-in-out;
+  background-color: rgba(0, 128, 0, 0.849);
+}

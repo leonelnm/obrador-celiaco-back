@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react'
 import { useLocation } from 'wouter'
 import { getAllProducts } from '../services/productService'
 import hasAnyError from '../validators/responseValidator'
-import { useToken } from './useToken'
+import useUser from './useUser'
 
 export const useProducts = () => {
-  const token = useToken()
+  const { token, logout } = useUser()
   const [loading, setLoading] = useState(true)
   const [products, setProducts] = useState([])
   const [, navigate] = useLocation()
@@ -16,12 +16,14 @@ export const useProducts = () => {
         if (!hasAnyError(data)) {
           setProducts(data)
         } else {
+          logout()
           navigate('/login')
         }
         setLoading(false)
       })
       .catch(res => {
         setLoading(false)
+        logout()
         navigate('/login')
       })
   }, [token])

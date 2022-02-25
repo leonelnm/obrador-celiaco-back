@@ -30,6 +30,7 @@ export default function useUser () {
     isLogged: Boolean(jwt),
     isLoading: state.loading,
     hasError: state.error,
+    token: jwt,
     login,
     logout
   }
