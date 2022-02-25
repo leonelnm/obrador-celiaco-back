@@ -3,13 +3,13 @@ import css from './products.module.css'
 
 export const Product = ({ id, name, price, img, imgAlt, content }) => {
   const url = `/products/${id}`
-
   const contenido = content ? content.split('<>') : []
+  const imgSrc = img || '/noimage1.jpg'
 
   return (
     <article className={css.productCard}>
       <div className={css.productCardImage}>
-        <img src={img} alt={imgAlt} />
+          <img src={imgSrc} alt={imgAlt} />
       </div>
 
       <section className={css.productCardBody}>
